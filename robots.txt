@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hamarrenseri.github.io/HamarRenseri/sitemap.xml
