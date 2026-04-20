@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Hamar Renseri | Vi gir klærne et nytt liv</title>
-    <meta name="description" content="Hamar Renseri tilbyr profesjonell rens og vask av tøy, dundyner, skinn og bunader i Hamar. Se vår fulle prisliste her!">
+    <meta name="description"
+        content="Hamar Renseri tilbyr profesjonell rens og vask av tøy, dundyner, skinn og bunader i Hamar. Se vår fulle prisliste her!">
     <meta name="keywords" content="Renseri Hamar, vaskeri, bunadrens, skjortevask, Hamar Renseri priser">
     <link rel="canonical" href="https://hamarrenseri.github.io/HamarRenseri/" />
-    
+
+    <link rel="shortcut icon" href="logo-icon.jpg" sizes="128x128" type="image/jpg" />
+    <link rel="apple-touch-icon" href="logo-icon.jpg" sizes="192x192" type="image/jpg" />
+    <link rel="icon" href="logo-icon.jpg" sizes="16x16" type="image/jpg" />
+
+    <link rel="manifest" href="site.webmanifest" />
+
     <style>
         /* --- RESPONSIVE DESIGNINNSTILLINGER --- */
         :root {
-            --dark-navy: #002d50; 
-            --bright-blue: #009ce4; 
-            --wave-blue: #005696; 
+            --dark-navy: #002d50;
+            --bright-blue: #009ce4;
+            --wave-blue: #005696;
             --bg-light: #f4f9ff;
             --white: #ffffff;
             --transition: all 0.3s ease;
@@ -27,7 +35,7 @@
             padding: 0;
             color: var(--dark-navy);
             background-color: #e0f2ff;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 10%),
                 radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 15%),
                 linear-gradient(180deg, #f4f9ff 0%, #c1e4ff 100%);
@@ -39,9 +47,12 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-            background: 
+            background:
                 radial-gradient(circle at 10% 10%, white 1px, transparent 1px),
                 radial-gradient(circle at 90% 85%, white 1.5px, transparent 1.5px);
             background-size: 100px 100px;
@@ -50,8 +61,13 @@
         }
 
         @keyframes bubbleFloat {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-1000px); }
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-1000px);
+            }
         }
 
         header {
@@ -64,13 +80,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         .logo-container img {
             height: 90px;
             width: auto;
-            max-width: 100%; 
+            max-width: 100%;
             display: block;
             transition: var(--transition);
         }
@@ -95,29 +111,39 @@
         }
 
         .page {
-            display: none; 
+            display: none;
             padding: 5% 5%;
             max-width: 900px;
             margin: 20px auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,45,80,0.1);
+            box-shadow: 0 15px 35px rgba(0, 45, 80, 0.1);
             min-height: 50vh;
             border-bottom: 8px solid var(--wave-blue);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .page.active { 
-            display: block; 
+        .page.active {
+            display: block;
             animation: fadeInWash 0.6s ease-out;
         }
 
         @keyframes fadeInWash {
-            0% { opacity: 0; transform: scale(0.95) translateY(30px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
-        h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); text-transform: uppercase; }
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            text-transform: uppercase;
+        }
 
         .btn {
             background: linear-gradient(135deg, var(--wave-blue), var(--bright-blue));
@@ -155,14 +181,21 @@
             margin-top: 10px;
         }
 
-        .price-table th, .price-table td {
+        .price-table th,
+        .price-table td {
             text-align: left;
             padding: 12px;
             border-bottom: 1px solid #eee;
         }
 
-        .price-table tr:hover { background-color: #f0f7ff; }
-        .price-table th { background-color: var(--bg-light); color: var(--dark-navy); }
+        .price-table tr:hover {
+            background-color: #f0f7ff;
+        }
+
+        .price-table th {
+            background-color: var(--bg-light);
+            color: var(--dark-navy);
+        }
 
         .services-grid {
             display: grid;
@@ -184,23 +217,53 @@
             background: white;
         }
 
-        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; padding: 15px; }
-            nav { margin-top: 15px; width: 100%; text-align: center; }
-            nav button { margin: 5px 2px; font-size: 0.85rem; padding: 6px 10px; }
-            .logo-container img { height: 70px; }
-            .page { margin: 15px; padding: 30px 20px; border-radius: 15px; }
-            .btn { width: 80%; }
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            nav {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav button {
+                margin: 5px 2px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .logo-container img {
+                height: 70px;
+            }
+
+            .page {
+                margin: 15px;
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+
+            .btn {
+                width: 80%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/591729803_1412538503981940_5025617334395795804_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeGEmLDxGN8TupvZ3Mb8u65oM_OPyBnPXpIz84_IGc9eklYtR-9TC_-TClkmDktufAKxUetfWldLSc8BFFURagSf&_nc_ohc=3yxYZMj62FEQ7kNvwEY5U7x&_nc_oc=AdmGPfk6_cl9eJSw3DAgwgaBiz86LDLkeCKcosXKsB5q9FldImsVrNkQXemW_erOW68&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=691JegSXl7bwP77ZdlRn0w&oh=00_AftK5Ly1karAQ4v5jjKj5zVxhLTEZ8WW44w7vLxCJGRkqg&oe=69A4DFE6" alt="Hamar Renseri">
+            <img src="logo-icon.jpg" alt="Hamar Renseri">
         </div>
         <nav>
             <button onclick="showPage('hjem')" id="btn-hjem" class="active">Hjem</button>
@@ -213,25 +276,35 @@
     <main id="hjem" class="page active">
         <h1>Velkommen til Hamar Renseri</h1>
         <p style="color: var(--bright-blue); font-weight: bold; font-style: italic;">"Vi gir klærne et nytt liv"</p>
-        <p>Ekspertbehandling av dine tekstiler. Vi kombinerer lokal trygghet med moderne digitale løsninger for å gjøre klesvasken enkel for deg.</p>
-        <a href="https://hamarrenseri.smrtapp.com/custx/" class="btn">Bestill her</a>
+        <p>Ekspertbehandling av dine tekstiler. Vi kombinerer lokal trygghet med moderne digitale løsninger for å gjøre
+            klesvasken enkel for deg.</p>
+        <a href="https://hamarrenseri.smrtapp.com/custx/" class="btn" target="_blank">Bestill her</a>
     </main>
 
     <main id="tjenester" class="page">
         <h1>Våre Tjenester</h1>
         <div class="services-grid">
-            <div class="service-item"><strong>👔 Skjorteservice</strong><p>Vasket og strøket til perfeksjon.</p></div>
-            <div class="service-item"><strong>🧥 Dress & Drakter</strong><p>Skånsom rens for fine tekstiler.</p></div>
-            <div class="service-item"><strong>🛏️ Husholdning</strong><p>Dyprens av dyner, puter og gardiner.</p></div>
-            <div class="service-item"><strong>✨ Spesialrens</strong><p>Behandling av brudekjoler og festantrekk.</p></div>
+            <div class="service-item"><strong>👔 Skjorteservice</strong>
+                <p>Vasket og strøket til perfeksjon.</p>
+            </div>
+            <div class="service-item"><strong>🧥 Dress & Drakter</strong>
+                <p>Skånsom rens for fine tekstiler.</p>
+            </div>
+            <div class="service-item"><strong>🛏️ Husholdning</strong>
+                <p>Dyprens av dyner, puter og gardiner.</p>
+            </div>
+            <div class="service-item"><strong>✨ Spesialrens</strong>
+                <p>Behandling av brudekjoler og festantrekk.</p>
+            </div>
         </div>
         <button onclick="showPage('priser')" class="btn">Se full prisliste</button>
     </main>
 
     <main id="priser" class="page">
         <h1>Prisliste</h1>
-        <input type="text" id="searchBar" onkeyup="filterPrices()" placeholder="Søk etter tjeneste (f.eks. 'bunad' eller 'jakke')...">
-        
+        <input type="text" id="searchBar" onkeyup="filterPrices()"
+            placeholder="Søk etter tjeneste (f.eks. 'bunad' eller 'jakke')...">
+
         <table class="price-table" id="priceTable">
             <thead>
                 <tr>
@@ -240,180 +313,702 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Advokatkappe</td><td>330 NOK</td></tr>
-                <tr><td>Arb. bukse</td><td>180 NOK</td></tr>
-                <tr><td>Arb. genser</td><td>120 NOK</td></tr>
-                <tr><td>Arb. jakke</td><td>180 NOK</td></tr>
-                <tr><td>Arb. kjeledress</td><td>280 NOK</td></tr>
-                <tr><td>Arb. refleksvest</td><td>60 NOK</td></tr>
-                <tr><td>Arb. t-skjorte</td><td>90 NOK</td></tr>
-                <tr><td>Arb. varmebukse</td><td>220 NOK</td></tr>
-                <tr><td>Arb. varmejakke</td><td>220 NOK</td></tr>
-                <tr><td>Arb. varmekjeledress</td><td>410 NOK</td></tr>
-                <tr><td>Babypose (Skinn)</td><td>580 NOK</td></tr>
-                <tr><td>Babypose (stoff)</td><td>550 NOK</td></tr>
-                <tr><td>Barn Jakke</td><td>206 NOK</td></tr>
-                <tr><td>Barn Skjørt</td><td>206 NOK</td></tr>
-                <tr><td>Barnebunad</td><td>400 NOK</td></tr>
-                <tr><td>Barn dunnjakke</td><td>390 NOK</td></tr>
-                <tr><td>Barnekjole</td><td>273 NOK</td></tr>
-                <tr><td>Barnekåpe</td><td>336 NOK</td></tr>
-                <tr><td>Bomullsbluse</td><td>200 NOK</td></tr>
-                <tr><td>Brudekjole (fra 1500,- til 3000,-)</td><td>0.00 NOK</td></tr>
-                <tr><td>Brudeslør</td><td>500 NOK</td></tr>
-                <tr><td>Bukse (Jeans/ chinos)</td><td>273 NOK</td></tr>
-                <tr><td>Bukse Barn</td><td>206 NOK</td></tr>
-                <tr><td>Bukse Kjole og hvit galla</td><td>326 NOK</td></tr>
-                <tr><td>Bunad med påsydd forkle</td><td>807 NOK</td></tr>
-                <tr><td>Bunad u/ forkle</td><td>656 NOK</td></tr>
-                <tr><td>Bunadsbukse/Nikkers</td><td>295 NOK</td></tr>
-                <tr><td>Bunadsforkle</td><td>251 NOK</td></tr>
-                <tr><td>Bunadsjakke / cape</td><td>295 NOK</td></tr>
-                <tr><td>Bunadsjal</td><td>220 NOK</td></tr>
-                <tr><td>Bunadskjorte</td><td>419 NOK</td></tr>
-                <tr><td>Bunadslue</td><td>220 NOK</td></tr>
-                <tr><td>Bunadsskjørt</td><td>460 NOK</td></tr>
-                <tr><td>Bunadveske</td><td>220 NOK</td></tr>
-                <tr><td>Bunadvest</td><td>313 NOK</td></tr>
-                <tr><td>Båtkalesj (liten eller 1 del)</td><td>2,050 NOK</td></tr>
-                <tr><td>Båtkalesj (medium eller 2 deler)</td><td>2,700 NOK</td></tr>
-                <tr><td>Båtkalesj (stor eller 3 deler eller flere)</td><td>3,150 NOK</td></tr>
-                <tr><td>Calzanetto Pussesvamp</td><td>59 NOK</td></tr>
-                <tr><td>Deo Fresh</td><td>129 NOK</td></tr>
-                <tr><td>Dobbelt Dynetrekk</td><td>175 NOK</td></tr>
-                <tr><td>Dobbelt Laken</td><td>165 NOK</td></tr>
-                <tr><td>Dressbukse</td><td> 285 NOK</td></tr>
-                <tr><td>Dressjakke/ blazer</td><td>285 NOK</td></tr>
-                <tr><td>Dresspose/ Kjolepose</td><td>199 NOK</td></tr>
-                <tr><td>Duffel Jakke</td><td>497 NOK</td></tr>
-                <tr><td>Duk rund</td><td>0.00 NOK</td></tr>
-                <tr><td>Duker </td><td> 150/meter NOK</td></tr>
-                <tr><td>Dunbukse</td><td> 486 NOK</td></tr>
-                <tr><td>Dundyne Dobbelt</td><td>695 NOK</td></tr>
-                <tr><td>Dundyne Enkl</td><td>590 NOK</td></tr>
-                <tr><td>Dunjakke</td><td>590 NOK</td></tr>
-                <tr><td>Dunjakke (kort og lett)</td><td>425 NOK</td></tr>
-                <tr><td>Dunjakke Barn</td><td>367 NOK</td></tr>
-                <tr><td>Dunjakke: Canada Goose</td><td>695 NOK</td></tr>
-                <tr><td>Dunjakke: Fleischer</td><td>695 NOK</td></tr>
-                <tr><td>Dunkåpe</td><td>690 NOK</td></tr>
-                <tr><td>Dunpute</td><td>290 NOK</td></tr>
-                <tr><td>Dunvest</td><td>485 NOK</td></tr>
-                <tr><td>Dyne Sommer</td><td>485 NOK</td></tr>
-                <tr><td>Dynetrekk enkelt</td><td> 130 NOK</td></tr>
-                <tr><td>Dåpskjole</td><td> 460 NOK</td></tr>
-                <tr><td>Fleecegenser</td><td>198 NOK</td></tr>
-                <tr><td>Frakk/ Kåpe/ Kappe</td><td>599 NOK</td></tr>
-                <tr><td>Fuskepels</td><td>486 NOK</td></tr>
-                <tr><td>Fuskepels 3/4 lang </td><td>628 NOK</td></tr>
-                <tr><td>Fuskepels Kort</td><td>523 NOK</td></tr>
-                <tr><td>Gallaskjorte</td><td> 249 NOK</td></tr>
-                <tr><td>Gardiner (325,- pr. kg.)</td><td>325 NOK</td></tr>
-                <tr><td>Gavekort</td><td>0.00 NOK</td></tr>
-                <tr><td>Gulvteppe (349,- pr. m2)</td><td>0.00 NOK</td></tr>
-                <tr><td>Henger</td><td>10 NOK</td></tr>
-                <tr><td>Hestedekke</td><td>828 NOK</td></tr>
-                <tr><td>Impregnering</td><td>220 NOK</td></tr>
-                <tr><td>Jakke Kjole og hvit galla</td><td> 326 NOK</td></tr>
-                <tr><td>Jump Suit</td><td>582 NOK</td></tr>
-                <tr><td>Kilovask (Pris pr. kg.)</td><td>220 NOK</td></tr>
-                <tr><td>Kjole Kort</td><td>418 NOK</td></tr>
-                <tr><td>Kjole Lang</td><td>628 NOK</td></tr>
-                <tr><td>Kjole Midi</td><td>528 NOK</td></tr>
-                <tr><td>Kjøkkenhåndkle</td><td> 35 NOK</td></tr>
-                <tr><td>Korpsbukse</td><td>168 NOK</td></tr>
-                <tr><td>Korpsjakke</td><td>168 NOK</td></tr>
-                <tr><td>Korpslue</td><td>52 NOK</td></tr>
-                <tr><td>Korpsskjørt</td><td>168 NOK</td></tr>
-                <tr><td>Korps /bukse/jakke</td><td>180 NOK</td></tr>
-                <tr><td>Kun press Jakke/Bukse/Skjørt/Vest</td><td>200 NOK</td></tr>
-                <tr><td>Kilovask (Pris pr. kg.)</td><td>120 NOK</td></tr>
-                <tr><td>Lorull</td><td>99 NOK</td></tr>
-                <tr><td>Lue/Skjerf/ hals</td><td>220 NOK</td></tr>
-                <tr><td>Matrosdress</td><td>405 NOK</td></tr>
-                <tr><td>Mopper</td><td> 41 NOK</td></tr>
-                <tr><td>Pelskåpe</td><td>2,080 NOK</td></tr>
-                <tr><td>Pelsstola</td><td>1,040 NOK</td></tr>
-                <tr><td>Piquetskjorte</td><td>168 NOK</td></tr>
-                <tr><td>Platinabag</td><td>0.00 NOK</td></tr>
-                <tr><td>Putevar</td><td>95 NOK</td></tr>
-                <tr><td>Quickshine selvglans</td><td>59 NOK</td></tr>
-                <tr><td>Saueskinn</td><td>515 NOK</td></tr>
-                <tr><td>Selskapskjole / Ballkjole</td><td>1,035 NOK</td></tr>
-                <tr><td>Sengekappe dobbelt</td><td>690 NOK</td></tr>
-                <tr><td>Sengeteppe Dob.</td><td>625 NOK</td></tr>
-                <tr><td>Sengeteppe Enkl.</td><td>520 NOK</td></tr>
-                <tr><td>Servietter </td><td>65 NOK</td></tr>
-                <tr><td>Shorts</td><td>208 NOK</td></tr>
-                <tr><td>Silkebluse</td><td>209 NOK</td></tr>
-                <tr><td>Silkesjal / Ullsjal</td><td>350 NOK</td></tr>
-                <tr><td>Silketørkle / Silkeskjerf</td><td>280 NOK</td></tr>
-                <tr><td>Skade: Blå sekk</td><td> 0.00 NOK</td></tr>
-                <tr><td>Skade: Hastesekk</td><td>0.00 NOK</td></tr>
-                <tr><td>Skade: Vanlig sekk</td><td>0.00 NOK</td></tr>
-                <tr><td>Skinn nikkers</td><td>797 NOK</td></tr>
-                <tr><td>Skinnbukse</td><td>820 NOK</td></tr>
-                <tr><td>Skinnhansker / votter</td><td>388 NOK</td></tr>
-                <tr><td>Skinnjakke 3/4 lang </td><td>1,040 NOK</td></tr>
-                <tr><td>Skinnjakke Kort</td><td>990 NOK</td></tr>
-                <tr><td>Skinnkjole</td><td>935 NOK</td></tr>
-                <tr><td>Skinnkåpe/ Frakk M/ Pelsfor</td><td>1,520 NOK</td></tr>
-                <tr><td>Skinnlue / skjerf</td><td>388 NOK</td></tr>
-                <tr><td>Skinnskjørt</td><td>820 NOK</td></tr>
-                <tr><td>Skinntøfler</td><td>388 NOK</td></tr>
-                <tr><td>Skinnvest</td><td>660 NOK</td></tr>
-                <tr><td>Skjerf</td><td> 220 NOK</td></tr>
-                <tr><td>Skjorte</td><td>125 NOK</td></tr>
-                <tr><td>Skjorte - Håndstrøket</td><td>190 NOK</td></tr>
-                <tr><td>Skjørt Kort</td><td>270 NOK</td></tr>
-                <tr><td>Skjørt Kort Med Folder</td><td>488 NOK</td></tr>
-                <tr><td>Skjørt Lang</td><td>486 NOK</td></tr>
-                <tr><td>Skjørt til dress/ drakt</td><td>275 NOK</td></tr>
-                <tr><td>Skobørste Liten</td><td>69 NOK</td></tr>
-                <tr><td>Skobørste Stor</td><td>69 NOK</td></tr>
-                <tr><td>Skofix Pussesvamp</td><td>49 NOK</td></tr>
-                <tr><td>Skohorn Liten Metal</td><td>49 NOK</td></tr>
-                <tr><td>Skohorn Liten Plast</td><td>39 NOK</td></tr>
-                <tr><td>Skohorn Stor Metal</td><td>169 NOK</td></tr>
-                <tr><td>Skohorn Stor Plast</td><td>65 NOK</td></tr>
-                <tr><td>Skokrem Eske</td><td>49 NOK</td></tr>
-                <tr><td>Skolisser Tykke runde</td><td>55 NOK</td></tr>
-                <tr><td>Skolisser brede flate</td><td>55 NOK</td></tr>
-                <tr><td>Skolisser tynne runde</td><td>47 NOK</td></tr>
-                <tr><td>Skopose</td><td>299 NOK</td></tr>
-                <tr><td>Slips / sløyfe</td><td>220 NOK</td></tr>
-                <tr><td>Smokingbelte</td><td>146 NOK</td></tr>
-                <tr><td>Smokingbukse</td><td>310 NOK</td></tr>
-                <tr><td>Smokingjakke</td><td>310 NOK</td></tr>
-                <tr><td>Smokingskjorte</td><td>249 NOK</td></tr>
-                <tr><td>Smokingvest</td><td>230 NOK</td></tr>
-                <tr><td>Sovepose</td><td>520 NOK</td></tr>
-                <tr><td>T-shirt</td><td>105 NOK</td></tr>
-                <tr><td>Topp</td><td>190 NOK</td></tr>
-                <tr><td>Trekk Overmadrass Dobbel</td><td>690 NOK</td></tr>
-                <tr><td>Trekk Overmadrass Enkl.</td><td>590 NOK</td></tr>
-                <tr><td>Tunika</td><td>230 NOK</td></tr>
-                <tr><td>Tøfler</td><td>388 NOK</td></tr>
-                <tr><td>Tepper</td><td>265/square meter NOK</td></tr>
-                <tr><td>Ullsokker (par)</td><td>95 NOK</td></tr>
-                <tr><td>Vask og brett (220,- pr. kg.)</td><td>220 NOK</td></tr>
-                <tr><td>Vest</td><td> 230 NOK </td></tr>
-                <tr><td>Vindjakke</td><td>295 NOK </td></tr>
-                <tr><td>Votter</td><td>388 NOK </td></tr>
-                <tr><td>Ytterjakke</td><td>398 NOK </td></tr>
-                <tr><td>bunadstrømper pr. par</td><td>315 NOK </td></tr>
-                <tr><td>Badehåndkle</td><td>90 NOK</td></tr>
-                <tr><td>Badekåpe</td><td>240 NOK</td></tr>
-                <tr><td>Bordløper (pr. løpemeter)</td><td>208 NOK</td></tr>
-                <tr><td>Ermebeskyttere</td><td>126 NOK</td></tr>
-                <tr><td>Håndhåndkle</td><td>60 NOK</td></tr>
-                <tr><td>Morgenkåpe</td><td>431 NOK</td></tr>
-                <tr><td>Pledd</td><td>289 NOK</td></tr>
-                <tr><td>Små Putetrekk</td><td>145 NOK</td></tr>
-                <tr><td>Sofaputetrekk</td><td>205 NOK</td></tr>
-                <tr><td>Sofatrekk Heldekkende (fra 850,-)</td><td>0.00 NOK</td></tr>
-                <tr><td>Stoltrekk Med Kappe</td><td>195 NOK</td></tr>
-                <tr><td>Stort Sofatrekk</td><td>388 NOK</td></tr>
+                <tr>
+                    <td>Advokatkappe</td>
+                    <td>330 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. bukse</td>
+                    <td>180 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. genser</td>
+                    <td>120 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. jakke</td>
+                    <td>180 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. kjeledress</td>
+                    <td>280 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. refleksvest</td>
+                    <td>60 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. t-skjorte</td>
+                    <td>90 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. varmebukse</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. varmejakke</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Arb. varmekjeledress</td>
+                    <td>410 NOK</td>
+                </tr>
+                <tr>
+                    <td>Babypose (Skinn)</td>
+                    <td>580 NOK</td>
+                </tr>
+                <tr>
+                    <td>Babypose (stoff)</td>
+                    <td>550 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barn Jakke</td>
+                    <td>206 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barn Skjørt</td>
+                    <td>206 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barnebunad</td>
+                    <td>400 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barn dunnjakke</td>
+                    <td>390 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barnekjole</td>
+                    <td>273 NOK</td>
+                </tr>
+                <tr>
+                    <td>Barnekåpe</td>
+                    <td>336 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bomullsbluse</td>
+                    <td>200 NOK</td>
+                </tr>
+                <tr>
+                    <td>Brudekjole (fra 1500,- til 3000,-)</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Brudeslør</td>
+                    <td>500 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bukse (Jeans/ chinos)</td>
+                    <td>273 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bukse Barn</td>
+                    <td>206 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bukse Kjole og hvit galla</td>
+                    <td>326 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunad med påsydd forkle</td>
+                    <td>807 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunad u/ forkle</td>
+                    <td>656 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadsbukse/Nikkers</td>
+                    <td>295 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadsforkle</td>
+                    <td>251 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadsjakke / cape</td>
+                    <td>295 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadsjal</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadskjorte</td>
+                    <td>419 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadslue</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadsskjørt</td>
+                    <td>460 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadveske</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bunadvest</td>
+                    <td>313 NOK</td>
+                </tr>
+                <tr>
+                    <td>Båtkalesj (liten eller 1 del)</td>
+                    <td>2,050 NOK</td>
+                </tr>
+                <tr>
+                    <td>Båtkalesj (medium eller 2 deler)</td>
+                    <td>2,700 NOK</td>
+                </tr>
+                <tr>
+                    <td>Båtkalesj (stor eller 3 deler eller flere)</td>
+                    <td>3,150 NOK</td>
+                </tr>
+                <tr>
+                    <td>Calzanetto Pussesvamp</td>
+                    <td>59 NOK</td>
+                </tr>
+                <tr>
+                    <td>Deo Fresh</td>
+                    <td>129 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dobbelt Dynetrekk</td>
+                    <td>175 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dobbelt Laken</td>
+                    <td>165 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dressbukse</td>
+                    <td> 285 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dressjakke/ blazer</td>
+                    <td>285 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dresspose/ Kjolepose</td>
+                    <td>199 NOK</td>
+                </tr>
+                <tr>
+                    <td>Duffel Jakke</td>
+                    <td>497 NOK</td>
+                </tr>
+                <tr>
+                    <td>Duk rund</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Duker </td>
+                    <td> 150/meter NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunbukse</td>
+                    <td> 486 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dundyne Dobbelt</td>
+                    <td>695 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dundyne Enkl</td>
+                    <td>590 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunjakke</td>
+                    <td>590 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunjakke (kort og lett)</td>
+                    <td>425 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunjakke Barn</td>
+                    <td>367 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunjakke: Canada Goose</td>
+                    <td>695 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunjakke: Fleischer</td>
+                    <td>695 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunkåpe</td>
+                    <td>690 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunpute</td>
+                    <td>290 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dunvest</td>
+                    <td>485 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dyne Sommer</td>
+                    <td>485 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dynetrekk enkelt</td>
+                    <td> 130 NOK</td>
+                </tr>
+                <tr>
+                    <td>Dåpskjole</td>
+                    <td> 460 NOK</td>
+                </tr>
+                <tr>
+                    <td>Fleecegenser</td>
+                    <td>198 NOK</td>
+                </tr>
+                <tr>
+                    <td>Frakk/ Kåpe/ Kappe</td>
+                    <td>599 NOK</td>
+                </tr>
+                <tr>
+                    <td>Fuskepels</td>
+                    <td>486 NOK</td>
+                </tr>
+                <tr>
+                    <td>Fuskepels 3/4 lang </td>
+                    <td>628 NOK</td>
+                </tr>
+                <tr>
+                    <td>Fuskepels Kort</td>
+                    <td>523 NOK</td>
+                </tr>
+                <tr>
+                    <td>Gallaskjorte</td>
+                    <td> 249 NOK</td>
+                </tr>
+                <tr>
+                    <td>Gardiner (325,- pr. kg.)</td>
+                    <td>325 NOK</td>
+                </tr>
+                <tr>
+                    <td>Gavekort</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Gulvteppe (349,- pr. m2)</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Henger</td>
+                    <td>10 NOK</td>
+                </tr>
+                <tr>
+                    <td>Hestedekke</td>
+                    <td>828 NOK</td>
+                </tr>
+                <tr>
+                    <td>Impregnering</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Jakke Kjole og hvit galla</td>
+                    <td> 326 NOK</td>
+                </tr>
+                <tr>
+                    <td>Jump Suit</td>
+                    <td>582 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kilovask (Pris pr. kg.)</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kjole Kort</td>
+                    <td>418 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kjole Lang</td>
+                    <td>628 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kjole Midi</td>
+                    <td>528 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kjøkkenhåndkle</td>
+                    <td> 35 NOK</td>
+                </tr>
+                <tr>
+                    <td>Korpsbukse</td>
+                    <td>168 NOK</td>
+                </tr>
+                <tr>
+                    <td>Korpsjakke</td>
+                    <td>168 NOK</td>
+                </tr>
+                <tr>
+                    <td>Korpslue</td>
+                    <td>52 NOK</td>
+                </tr>
+                <tr>
+                    <td>Korpsskjørt</td>
+                    <td>168 NOK</td>
+                </tr>
+                <tr>
+                    <td>Korps /bukse/jakke</td>
+                    <td>180 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kun press Jakke/Bukse/Skjørt/Vest</td>
+                    <td>200 NOK</td>
+                </tr>
+                <tr>
+                    <td>Kilovask (Pris pr. kg.)</td>
+                    <td>120 NOK</td>
+                </tr>
+                <tr>
+                    <td>Lorull</td>
+                    <td>99 NOK</td>
+                </tr>
+                <tr>
+                    <td>Lue/Skjerf/ hals</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Matrosdress</td>
+                    <td>405 NOK</td>
+                </tr>
+                <tr>
+                    <td>Mopper</td>
+                    <td> 41 NOK</td>
+                </tr>
+                <tr>
+                    <td>Pelskåpe</td>
+                    <td>2,080 NOK</td>
+                </tr>
+                <tr>
+                    <td>Pelsstola</td>
+                    <td>1,040 NOK</td>
+                </tr>
+                <tr>
+                    <td>Piquetskjorte</td>
+                    <td>168 NOK</td>
+                </tr>
+                <tr>
+                    <td>Platinabag</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Putevar</td>
+                    <td>95 NOK</td>
+                </tr>
+                <tr>
+                    <td>Quickshine selvglans</td>
+                    <td>59 NOK</td>
+                </tr>
+                <tr>
+                    <td>Saueskinn</td>
+                    <td>515 NOK</td>
+                </tr>
+                <tr>
+                    <td>Selskapskjole / Ballkjole</td>
+                    <td>1,035 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sengekappe dobbelt</td>
+                    <td>690 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sengeteppe Dob.</td>
+                    <td>625 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sengeteppe Enkl.</td>
+                    <td>520 NOK</td>
+                </tr>
+                <tr>
+                    <td>Servietter </td>
+                    <td>65 NOK</td>
+                </tr>
+                <tr>
+                    <td>Shorts</td>
+                    <td>208 NOK</td>
+                </tr>
+                <tr>
+                    <td>Silkebluse</td>
+                    <td>209 NOK</td>
+                </tr>
+                <tr>
+                    <td>Silkesjal / Ullsjal</td>
+                    <td>350 NOK</td>
+                </tr>
+                <tr>
+                    <td>Silketørkle / Silkeskjerf</td>
+                    <td>280 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skade: Blå sekk</td>
+                    <td> 0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skade: Hastesekk</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skade: Vanlig sekk</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinn nikkers</td>
+                    <td>797 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnbukse</td>
+                    <td>820 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnhansker / votter</td>
+                    <td>388 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnjakke 3/4 lang </td>
+                    <td>1,040 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnjakke Kort</td>
+                    <td>990 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnkjole</td>
+                    <td>935 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnkåpe/ Frakk M/ Pelsfor</td>
+                    <td>1,520 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnlue / skjerf</td>
+                    <td>388 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnskjørt</td>
+                    <td>820 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinntøfler</td>
+                    <td>388 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skinnvest</td>
+                    <td>660 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjerf</td>
+                    <td> 220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjorte</td>
+                    <td>125 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjorte - Håndstrøket</td>
+                    <td>190 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjørt Kort</td>
+                    <td>270 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjørt Kort Med Folder</td>
+                    <td>488 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjørt Lang</td>
+                    <td>486 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skjørt til dress/ drakt</td>
+                    <td>275 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skobørste Liten</td>
+                    <td>69 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skobørste Stor</td>
+                    <td>69 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skofix Pussesvamp</td>
+                    <td>49 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skohorn Liten Metal</td>
+                    <td>49 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skohorn Liten Plast</td>
+                    <td>39 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skohorn Stor Metal</td>
+                    <td>169 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skohorn Stor Plast</td>
+                    <td>65 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skokrem Eske</td>
+                    <td>49 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skolisser Tykke runde</td>
+                    <td>55 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skolisser brede flate</td>
+                    <td>55 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skolisser tynne runde</td>
+                    <td>47 NOK</td>
+                </tr>
+                <tr>
+                    <td>Skopose</td>
+                    <td>299 NOK</td>
+                </tr>
+                <tr>
+                    <td>Slips / sløyfe</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Smokingbelte</td>
+                    <td>146 NOK</td>
+                </tr>
+                <tr>
+                    <td>Smokingbukse</td>
+                    <td>310 NOK</td>
+                </tr>
+                <tr>
+                    <td>Smokingjakke</td>
+                    <td>310 NOK</td>
+                </tr>
+                <tr>
+                    <td>Smokingskjorte</td>
+                    <td>249 NOK</td>
+                </tr>
+                <tr>
+                    <td>Smokingvest</td>
+                    <td>230 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sovepose</td>
+                    <td>520 NOK</td>
+                </tr>
+                <tr>
+                    <td>T-shirt</td>
+                    <td>105 NOK</td>
+                </tr>
+                <tr>
+                    <td>Topp</td>
+                    <td>190 NOK</td>
+                </tr>
+                <tr>
+                    <td>Trekk Overmadrass Dobbel</td>
+                    <td>690 NOK</td>
+                </tr>
+                <tr>
+                    <td>Trekk Overmadrass Enkl.</td>
+                    <td>590 NOK</td>
+                </tr>
+                <tr>
+                    <td>Tunika</td>
+                    <td>230 NOK</td>
+                </tr>
+                <tr>
+                    <td>Tøfler</td>
+                    <td>388 NOK</td>
+                </tr>
+                <tr>
+                    <td>Tepper</td>
+                    <td>265/square meter NOK</td>
+                </tr>
+                <tr>
+                    <td>Ullsokker (par)</td>
+                    <td>95 NOK</td>
+                </tr>
+                <tr>
+                    <td>Vask og brett (220,- pr. kg.)</td>
+                    <td>220 NOK</td>
+                </tr>
+                <tr>
+                    <td>Vest</td>
+                    <td> 230 NOK </td>
+                </tr>
+                <tr>
+                    <td>Vindjakke</td>
+                    <td>295 NOK </td>
+                </tr>
+                <tr>
+                    <td>Votter</td>
+                    <td>388 NOK </td>
+                </tr>
+                <tr>
+                    <td>Ytterjakke</td>
+                    <td>398 NOK </td>
+                </tr>
+                <tr>
+                    <td>bunadstrømper pr. par</td>
+                    <td>315 NOK </td>
+                </tr>
+                <tr>
+                    <td>Badehåndkle</td>
+                    <td>90 NOK</td>
+                </tr>
+                <tr>
+                    <td>Badekåpe</td>
+                    <td>240 NOK</td>
+                </tr>
+                <tr>
+                    <td>Bordløper (pr. løpemeter)</td>
+                    <td>208 NOK</td>
+                </tr>
+                <tr>
+                    <td>Ermebeskyttere</td>
+                    <td>126 NOK</td>
+                </tr>
+                <tr>
+                    <td>Håndhåndkle</td>
+                    <td>60 NOK</td>
+                </tr>
+                <tr>
+                    <td>Morgenkåpe</td>
+                    <td>431 NOK</td>
+                </tr>
+                <tr>
+                    <td>Pledd</td>
+                    <td>289 NOK</td>
+                </tr>
+                <tr>
+                    <td>Små Putetrekk</td>
+                    <td>145 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sofaputetrekk</td>
+                    <td>205 NOK</td>
+                </tr>
+                <tr>
+                    <td>Sofatrekk Heldekkende (fra 850,-)</td>
+                    <td>0.00 NOK</td>
+                </tr>
+                <tr>
+                    <td>Stoltrekk Med Kappe</td>
+                    <td>195 NOK</td>
+                </tr>
+                <tr>
+                    <td>Stort Sofatrekk</td>
+                    <td>388 NOK</td>
+                </tr>
             </tbody>
         </table>
     </main>
@@ -438,7 +1033,7 @@
             document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             document.getElementById('btn-' + pageId).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function filterPrices() {
@@ -458,4 +1053,5 @@
     </script>
 
 </body>
+
 </html>
