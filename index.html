@@ -17,6 +17,124 @@
 
     <link rel="manifest" href="site.webmanifest" />
 
+    <!-- ========================================== -->
+<!-- 1. MODAL HTML STYLING (Place in <head>)   -->
+<!-- ========================================== -->
+<style>
+  /* The Modal Background */
+  .notice-modal {
+    display: flex;
+    position: fixed;
+    z-index: 9999; /* Ensures it stays on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 500px; /* Fits the flyer dimensions nicely */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: zoomIn 0.4s ease;
+  }
+
+  /* Attention Banner */
+  .attention-banner {
+    background-color: #d9383a; /* Notice/Alert Red */
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* The Image container */
+  .modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* The Close Button */
+  .close-modal-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .close-modal-btn:hover {
+    color: #ffcccc;
+  }
+
+  /* Animation */
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<!-- ========================================== -->
+<!-- 2. MODAL HTML STRUCTURE (Place in <body>)  -->
+<!-- ========================================== -->
+<div id="attentionModal" class="notice-modal">
+  <div class="modal-content">
+    <!-- Attention Banner -->
+    <div class="attention-banner">
+      ⚠️ VIKTIG INFO / ATTENTION!
+      <span class="close-modal-btn" onclick="closeModal()">&times;</span>
+    </div>
+    <!-- Flyer Image -->
+    <div class="modal-body">
+      <!-- Change 'summer-hours-2026.jpg' to the exact path where you saved your image -->
+      <img src="summer-hours-2026.jpg" alt="Hamar Renseri Sommer 2026 Åpningstider">
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 3. JAVASCRIPT LOGIC (Place before </body>) -->
+<!-- ========================================== -->
+<script>
+  // Function to close the modal
+  function closeModal() {
+    var modal = document.getElementById("attentionModal");
+    modal.style.opacity = "0";
+    setTimeout(function() {
+      modal.style.display = "none";
+    }, 300); // Smooth fade out
+  }
+
+  // Close the modal if the user clicks anywhere outside of the image box
+  window.onclick = function(event) {
+    var modal = document.getElementById("attentionModal");
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+    
     <style>
         /* --- RESPONSIVE DESIGNINNSTILLINGER --- */
         :root {
