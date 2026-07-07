@@ -18,81 +18,45 @@
     <link rel="manifest" href="site.webmanifest" />
 
     <!-- ========================================== -->
-<!-- 1. MODAL HTML STYLING (Place in <head>)   -->
+<!-- UPDATE: MODAL HTML STRUCTURE WITH TEXT     -->
 <!-- ========================================== -->
-<style>
-  /* The Modal Background */
-  .notice-modal {
-    display: flex;
-    position: fixed;
-    z-index: 9999; /* Ensures it stays on top of everything */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
+<div id="attentionModal" class="notice-modal">
+  <div class="modal-content">
+    
+    <!-- Attention Banner -->
+    <div class="attention-banner">
+      ⚠️ VIKTIG INFO / ATTENTION!
+      <span class="close-modal-btn" onclick="closeModal()">&times;</span>
+    </div>
+    
+    <!-- Modal Body with Dates and Times -->
+    <div class="modal-body-text">
+      <h2>HAMAR RENSERI</h2>
+      <h3>Sommer 2026 Åpningstider</h3>
+      
+      <div class="schedule-container">
+        <!-- Week 28 -->
+        <div class="week-box orange-theme">
+          <div class="week-header">UKE 28</div>
+          <div class="week-dates">JULY 6–10</div>
+          <div class="week-time">KL. 10.00–15.00</div>
+          <div class="week-weekend">LØRDAG: CLOSED</div>
+        </div>
 
-  /* Modal Content Box */
-  .modal-content {
-    background-color: #fff;
-    position: relative;
-    margin: auto;
-    padding: 0;
-    width: 90%;
-    max-width: 500px; /* Fits the flyer dimensions nicely */
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    overflow: hidden;
-    animation: zoomIn 0.4s ease;
-  }
+        <!-- Week 29 -->
+        <div class="week-box blue-theme">
+          <div class="week-header">UKE 29</div>
+          <div class="week-dates">JULY 13–17</div>
+          <div class="week-time">KL. 10.00–15.00</div>
+          <div class="week-weekend">LØRDAG: CLOSED</div>
+        </div>
+      </div>
 
-  /* Attention Banner */
-  .attention-banner {
-    background-color: #d9383a; /* Notice/Alert Red */
-    color: white;
-    text-align: center;
-    padding: 12px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+      <p class="summer-wish">Ha en riktig god sommer !!! ☀️</p>
+    </div>
 
-  /* The Image container */
-  .modal-body img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* The Close Button */
-  .close-modal-btn {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-
-  .close-modal-btn:hover {
-    color: #ffcccc;
-  }
-<img src="https://raw.githubusercontent.com/HamarRenseri/HamarRenseri/main/Bilder/sommer_2026.jpg" alt="Hamar Renseri Sommer 2026 Åpningstider">
-  /* Animation */
-  @keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
+  </div>
+</div>
 </style>
 
 <!-- ========================================== -->
