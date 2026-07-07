@@ -98,6 +98,153 @@
     }
   }
 </script>
+
+<style>
+  /* The Modal Background */
+  .notice-modal {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #f7f9fc;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: zoomIn 0.4s ease;
+  }
+
+  /* Attention Banner */
+  .attention-banner {
+    background-color: #d9383a;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  /* Close Button */
+  .close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* Body Text Styling */
+  .modal-body-text {
+    padding: 25px 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  .modal-body-text h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #1a2b4c;
+    letter-spacing: 1px;
+  }
+
+  .modal-body-text h3 {
+    margin: 5px 0 20px 0;
+    font-size: 1.3rem;
+    color: #e67e22;
+    font-style: italic;
+  }
+
+  /* Layout for the weeks */
+  .schedule-container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  /* Individual Week Cards */
+  .week-box {
+    flex: 1;
+    background: white;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 15px 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .week-header {
+    color: white;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .orange-theme .week-header { background-color: #f39c12; }
+  .blue-theme .week-header { background-color: #2980b9; }
+
+  .week-dates {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #2c3e50;
+  }
+
+  .week-time {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 4px 0 10px 0;
+  }
+
+  .week-weekend {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #c0392b;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+  }
+
+  .summer-wish {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 15px;
+  }
+
+  /* Animation */
+  @keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* Mobile optimization */
+  @media (max-width: 400px) {
+    .schedule-container {
+      flex-direction: column;
+    }
+  }
+</style>
     
     <style>
         /* --- RESPONSIVE DESIGNINNSTILLINGER --- */
