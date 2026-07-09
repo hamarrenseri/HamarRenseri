@@ -220,7 +220,33 @@
     }
   }
 </style>
-    
+    /* The semi-transparent background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dims the background */
+  display: flex; /* Centers the modal box */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Keeps it on top of everything else */
+}
+
+/* Style for the close button to make it look like a clean 'X' */
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #ddd;
+}
 </style>
     
     <style>
@@ -466,7 +492,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="logo-container">
             <img src="logo-icon.jpg" alt="Hamar Renseri">
@@ -1229,7 +1254,23 @@
     <footer>
         <p>&copy; 2026 Hamar Renseri. Alle rettigheter forbeholdt.</p>
     </footer>
+    <script>
+  // Get the modal overlay and the close button elements
+  const modalOverlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('close-btn');
 
+  // Add a click event listener to the X button
+  closeBtn.addEventListener('click', function() {
+    modalOverlay.style.display = 'none';
+  });
+
+  // Optional: Close the modal if the user clicks anywhere outside the white box
+  modalOverlay.addEventListener('click', function(event) {
+    if (event.target === modalOverlay) {
+      modalOverlay.style.display = 'none';
+    }
+  });
+</script>
     <script>
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
